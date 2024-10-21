@@ -50,12 +50,6 @@ public class HelloController {
 
     @FXML
     private TextField txt_hermanos;
-
-    @FXML
-    void habilitaLista(ActionEvent event) {
-
-    }
-    @FXML
     public void initialize() {
         ObservableList<String> edades = FXCollections.observableArrayList(
                 "Menores de 18", "Entre 18 y 30", "Entre 31 y 50", "Entre 51 y 70", "Mayores de 70"
@@ -73,12 +67,17 @@ public class HelloController {
         lst_deportes.setTooltip(new Tooltip("deporte preferido si practica alguno de los siguientes"));
     }
     @FXML
-    private void habilitaLista() {
+    private void salir() {
+        Stage stage = (Stage) btt_cancelar.getScene().getWindow();
+        stage.close();
+    }
+    @FXML
+    private void habilitarLista(ActionEvent event) {
         lst_deportes.setDisable(!check_deportes.isSelected());
     }
 
     @FXML
-    private void mostrarDatos() {
+    private void mostrar() {
         StringBuilder errores = new StringBuilder();
 
         String profesion = txt_Prof.getText().trim();
@@ -130,11 +129,6 @@ public class HelloController {
         alert.setHeaderText(null);
         alert.setContentText(mensaje);
         alert.showAndWait();
-    }
-    @FXML
-    public void salir() {
-        Stage stage = (Stage) btt_cancelar.getScene().getWindow();
-        stage.close();
     }
 
 }

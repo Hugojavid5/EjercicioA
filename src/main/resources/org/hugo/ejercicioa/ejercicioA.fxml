@@ -16,8 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="709.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="709.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.hugo.ejercicioa.HelloController">
    <children>
       <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="54.0" prefWidth="716.0" text="ENCUESTAS" textAlignment="CENTER">
          <font>
@@ -75,7 +74,7 @@
                   <RadioButton fx:id="radioButton_otro" mnemonicParsing="false" prefHeight="18.0" prefWidth="100.0" text="Otro" HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
-            <CheckBox fx:id="check_deportes" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#habilitaLista" prefHeight="18.0" prefWidth="181.0" text="¿Practica algun deporte?" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <CheckBox fx:id="check_deportes" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#habilitarLista" prefHeight="18.0" prefWidth="181.0" text="¿Practica algun deporte?" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
             <VBox alignment="CENTER_LEFT" prefHeight="73.0" prefWidth="308.0" GridPane.columnIndex="1" GridPane.rowIndex="2" VBox.vgrow="ALWAYS">
                <children>
                   <Label contentDisplay="RIGHT" text="¿Cual?" />
@@ -120,7 +119,7 @@
                 <RowConstraints maxHeight="25.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="btt_aceptar" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#mostrarDatos" prefHeight="3.0" prefWidth="263.0" text="Aceptar" />
+                  <Button fx:id="btt_aceptar" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#mostrar" prefHeight="3.0" prefWidth="263.0" text="Aceptar" />
                   <Button fx:id="btt_cancelar" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#salir" prefHeight="0.0" prefWidth="280.0" text="Cancelar" GridPane.columnIndex="1" />
                </children>
             </GridPane>
