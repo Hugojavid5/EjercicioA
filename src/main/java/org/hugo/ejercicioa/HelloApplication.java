@@ -7,16 +7,18 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+
 public class HelloApplication extends Application {
+
+
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ejercicioA.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
+        Scene scene = new Scene(fxmlLoader.load(), 610, 520);
+        stage.setMinHeight(500);
+        stage.setMinWidth(600);
+        stage.setTitle("Ejercicio A");
         stage.setScene(scene);
-        stage.setMaxWidth(750);
-        stage.setMinHeight(400);
-        stage.setResizable(false);
         stage.show();
     }
 
