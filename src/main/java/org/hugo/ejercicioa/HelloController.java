@@ -71,6 +71,9 @@ public class HelloController {
         );
         lst_deportes.setItems(deportes);
 
+        // Permite la selección múltiple en la lista de deportes
+        lst_deportes.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+
         // Deshabilita la lista de deportes inicialmente
         lst_deportes.setDisable(true);
 
@@ -78,6 +81,7 @@ public class HelloController {
         combo_edad.setTooltip(new Tooltip("rango de edad al que pertenece"));
         lst_deportes.setTooltip(new Tooltip("deporte preferido si practica alguno de los siguientes"));
     }
+
 
     /**
      * Cierra la ventana de la aplicación cuando el botón de cancelar es presionado.
@@ -133,21 +137,26 @@ public class HelloController {
             mostrarError(errores.toString());
             return;
         }
-
-        // Si no hay errores, se recopilan los datos ingresados
+        String deporte = "";
+        if (check_deportes.isSelected()) {
+            deporte += "Deportes que practicas : \n";
+            for (String deportes : lst_deportes.getSelectionModel().getSelectedItems()) {
+                deporte += "\t" + deporte + "\n";
+            }
+        } else {
+            deporte += "No practicas ningun deporte \n";
+        }
         String edadSeleccionada = combo_edad.getSelectionModel().getSelectedItem();
-        String deporteSeleccionado = check_deportes.isSelected() ? lst_deportes.getSelectionModel().getSelectedItem() : "No practica deportes";
         double compras = slider_com.getValue();
         double television = slider_tv.getValue();
         double cine = sldr_cine.getValue();
 
         // Muestra un mensaje con los datos ingresados
         String mensaje = String.format("Profesión: %s\nNúmero de hermanos: %d\nEdad: %s\nDeporte: %s\nCompras: %.1f\nVerTelevisión: %.1f\nIr al cine: %.1f",
-                profesion, numHermanos, edadSeleccionada, deporteSeleccionado, compras, television, cine);
+                profesion, numHermanos, edadSeleccionada, deporte, compras, television, cine);
 
         mostrarInformacion("Datos ingresados correctamente", mensaje);
     }
-
     /**
      * Muestra un cuadro de diálogo de error con el mensaje proporcionado.
      * @param mensaje El mensaje de error que se mostrará.
