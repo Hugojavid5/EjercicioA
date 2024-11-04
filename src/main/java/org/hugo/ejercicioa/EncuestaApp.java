@@ -13,7 +13,7 @@ import java.io.IOException;
  * Extiende la clase {@link javafx.application.Application}, que es el punto de entrada
  * para las aplicaciones JavaFX.
  */
-public class HelloApplication extends Application {
+public class EncuestaApp extends Application {
 
     /**
      * El método start es invocado automáticamente cuando la aplicación JavaFX es iniciada.
@@ -24,7 +24,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         // Carga el archivo FXML que contiene la definición de la interfaz
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ejercicioA.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(EncuestaApp.class.getResource("ejercicioA.fxml"));
         // Configura la escena con el contenido cargado del archivo FXML
         Scene scene = new Scene(fxmlLoader.load(), 610, 520);
 

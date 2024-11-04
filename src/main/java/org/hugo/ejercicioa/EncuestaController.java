@@ -12,7 +12,7 @@ import javafx.stage.Stage;
  * que permite al usuario ingresar información sobre su profesión, número de hermanos, edad,
  * deportes, y preferencias de entretenimiento.
  */
-public class HelloController {
+public class EncuestaController {
 
     @FXML
     private Button btt_aceptar;
