@@ -26,12 +26,12 @@ public class EncuestaApp extends Application {
         // Carga el archivo FXML que contiene la definición de la interfaz
         FXMLLoader fxmlLoader = new FXMLLoader(EncuestaApp.class.getResource("ejercicioA.fxml"));
         // Configura la escena con el contenido cargado del archivo FXML
-        Scene scene = new Scene(fxmlLoader.load(), 610, 520);
+        Scene scene = new Scene(fxmlLoader.load(), 900, 600);
 
         // Establece el tamaño mínimo de la ventana
         stage.setMinHeight(500);
         stage.setMinWidth(600);
-
+        stage.setResizable(false);
         // Establece el título de la ventana
         stage.setTitle("Ejercicio A");
 
